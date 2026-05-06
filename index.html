@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Toba Jaya Supplier — Premium Meat & Seafood</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --red-dark: #8B0000;
+    --red-glow: rgba(200,16,46,0.18);
+    --black: #0A0A0A;
+    --black-2: #111111;
+    --black-3: #181818;
+    --black-4: #222222;
+    --ice: #A8D4E6;
+    --ice-dim: rgba(168,212,230,0.12);
+    --ice-glow: rgba(168,212,230,0.25);
+    --white: #F5F0EB;
+    --white-dim: rgba(245,240,235,0.55);
+    --white-muted: rgba(245,240,235,0.25);
+    --gold: #C9A96E;
+    --border: rgba(245,240,235,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 60px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: padding .3s;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--red);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue'; font-size: 16px; color: white;
+    letter-spacing: 1px;
+  }
+  .logo-text { line-height: 1; }
+  .logo-text span:first-child {
+    display: block;
+    font-family: 'Bebas Neue'; font-size: 20px; letter-spacing: 3px; color: var(--white);
+  }
+  .logo-text span:last-child {
+    display: block;
+    font-size: 10px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--white-dim);
+    font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--red); color: white;
+    padding: 10px 24px; border-radius: 2px;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none; font-weight: 600;
+    transition: background .2s, transform .15s;
+  }
+  .nav-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  /* ── HERO ────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 120px 60px 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 70% 50%, rgba(139,0,0,0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(168,212,230,0.08) 0%, transparent 50%),
+      linear-gradient(160deg, #0A0A0A 0%, #140810 50%, #0A0C10 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(245,240,235,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,240,235,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, transparent 70%);
+  }
+  .hero-noise {
+    position: absolute; inset: 0; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 760px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ice-dim); border: 1px solid var(--ice-glow);
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ice);
+    margin-bottom: 28px;
+    animation: fadeUp .8s ease both;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ice); }
+  .hero-h1 {
+    font-family: 'Playfair Display'; font-weight: 900;
+    font-size: clamp(48px, 6vw, 90px); line-height: 1.0;
+    color: var(--white); letter-spacing: -1px;
+    animation: fadeUp .8s .15s ease both;
+  }
+  .hero-h1 em { font-style: normal; color: var(--red); }
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 16px; color: var(--white-dim); letter-spacing: 4px;
+    text-transform: uppercase; font-weight: 300;
+    animation: fadeUp .8s .3s ease both;
+  }
+  .hero-sub span { color: var(--gold); font-weight: 500; }
+  .hero-desc {
+    margin-top: 24px; max-width: 520px;
+    font-size: 15px; line-height: 1.75; color: var(--white-dim);
+    font-weight: 300;
+    animation: fadeUp .8s .4s ease both;
+  }
+  .hero-ctas {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    margin-top: 44px;
+    animation: fadeUp .8s .5s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--red); color: white;
+    padding: 16px 32px; border-radius: 2px;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 600; text-decoration: none;
+    border: 2px solid var(--red);
+    transition: all .2s;
+  }
+  .btn-primary:hover { background: transparent; color: var(--red); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--white);
+    padding: 16px 32px; border-radius: 2px;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 600; text-decoration: none;
+    border: 2px solid var(--border);
+    transition: all .2s;
+  }
+  .btn-outline:hover { border-color: var(--white-dim); }
+  .hero-stats {
+    position: absolute; bottom: 60px; right: 60px; z-index: 2;
+    display: flex; gap: 48px;
+    animation: fadeUp .8s .6s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    display: block;
+    font-family: 'Bebas Neue'; font-size: 44px; line-height: 1;
+    color: var(--white); letter-spacing: 2px;
+  }
+  .stat-label {
+    display: block;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--white-dim); margin-top: 4px;
+  }
+  .stat-divider {
+    width: 1px; background: var(--border); height: 60px; align-self: center;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 30px; left: 60px; z-index: 2;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--white-muted);
+    animation: fadeUp .8s .7s ease both;
+  }
+  .scroll-line { width: 40px; height: 1px; background: var(--white-muted); }
+
+  /* ── SECTION BASE ───────────────────────────────── */
+  section { padding: 100px 60px; }
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 20px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 2px; background: var(--red); }
+  .section-title {
+    font-family: 'Playfair Display'; font-size: clamp(32px, 4vw, 56px);
+    font-weight: 700; line-height: 1.1; color: var(--white);
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 15px; color: var(--white-dim); line-height: 1.75;
+    max-width: 560px; font-weight: 300;
+  }
+
+  /* ── PRODUCTS ────────────────────────────────────── */
+  #products { background: var(--black-2); }
+  .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
+  .product-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  }
+  .product-card {
+    position: relative; overflow: hidden;
+    aspect-ratio: 3/4;
+    background: var(--black-3);
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: transform .3s;
+  }
+  .product-card:hover { z-index: 2; transform: scale(1.02); }
+  .product-card-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, var(--black-3) 0%, #0d0d0d 100%);
+    transition: opacity .4s;
+  }
+  .product-card:hover .product-card-bg { opacity: 0.6; }
+  .product-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.95) 30%, transparent 80%);
+  }
+  .product-icon {
+    position: absolute; top: 32px; right: 32px;
+    font-size: 48px; opacity: 0.15;
+    transition: opacity .3s, transform .3s;
+  }
+  .product-card:hover .product-icon { opacity: 0.35; transform: scale(1.1); }
+  .product-accent {
+    position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+    background: var(--red); transform: scaleY(0); transform-origin: bottom;
+    transition: transform .3s;
+  }
+  .product-card:hover .product-accent { transform: scaleY(1); }
+  .product-content {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 32px;
+  }
+  .product-tag {
+    display: inline-block; padding: 4px 10px;
+    background: var(--red-glow); border: 1px solid rgba(200,16,46,0.3);
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red);
+    border-radius: 2px; margin-bottom: 12px;
+  }
+  .product-name {
+    font-family: 'Bebas Neue'; font-size: 28px; letter-spacing: 2px;
+    color: var(--white); line-height: 1; margin-bottom: 10px;
+  }
+  .product-items {
+    list-style: none;
+    font-size: 12px; color: var(--white-dim); line-height: 1.9;
+  }
+  .product-items li::before { content: '— '; color: var(--red); }
+  .product-count {
+    margin-top: 16px;
+    font-family: 'Bebas Neue'; font-size: 40px;
+    color: var(--white-muted); line-height: 1;
+  }
+  .product-count span { font-size: 12px; letter-spacing: 2px; font-family: 'DM Sans'; color: var(--white-muted); vertical-align: middle; }
+
+  /* ── WHY US ──────────────────────────────────────── */
+  #why { background: var(--black); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+  .why-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .why-feature {
+    padding: 32px; border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    transition: background .3s;
+  }
+  .why-feature:hover { background: var(--black-3); }
+  .why-feature::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--red), transparent);
+    opacity: 0; transition: opacity .3s;
+  }
+  .why-feature:hover::after { opacity: 1; }
+  .feature-icon-wrap {
+    width: 44px; height: 44px; border-radius: 4px;
+    background: var(--red-glow); border: 1px solid rgba(200,16,46,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 16px;
+  }
+  .feature-title { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .feature-desc { font-size: 12px; color: var(--white-dim); line-height: 1.65; }
+  .why-visual {
+    position: relative;
+    background: var(--black-3); border: 1px solid var(--border);
+    padding: 48px; border-radius: 4px;
+    overflow: hidden;
+  }
+  .why-visual-accent {
+    position: absolute; top: -30px; right: -30px;
+    width: 160px; height: 160px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,16,46,0.2), transparent 70%);
+  }
+  .why-visual-accent2 {
+    position: absolute; bottom: -40px; left: -40px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,212,230,0.08), transparent 70%);
+  }
+  .why-visual h3 {
+    font-family: 'Playfair Display'; font-size: 28px; color: var(--white); margin-bottom: 12px;
+  }
+  .why-visual p { font-size: 14px; color: var(--white-dim); line-height: 1.75; margin-bottom: 24px; }
+  .cold-badges { display: flex; flex-direction: column; gap: 12px; }
+  .cold-badge {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px;
+    background: var(--ice-dim); border: 1px solid var(--ice-glow);
+    border-radius: 4px;
+  }
+  .cold-badge-icon { font-size: 22px; }
+  .cold-badge-text span:first-child { display: block; font-size: 13px; font-weight: 600; color: var(--ice); }
+  .cold-badge-text span:last-child { display: block; font-size: 11px; color: var(--white-dim); margin-top: 1px; }
+
+  /* ── ORDER SYSTEM ────────────────────────────────── */
+  #order { background: var(--black-2); }
+  .order-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; align-items: center; }
+  .order-steps { display: flex; flex-direction: column; gap: 0; }
+  .order-step {
+    display: flex; gap: 24px; align-items: flex-start;
+    padding: 28px 0; border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .order-step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Bebas Neue'; font-size: 48px; line-height: 1;
+    color: var(--red); min-width: 50px; opacity: 0.4;
+    transition: opacity .3s;
+  }
+  .order-step:hover .step-num { opacity: 1; }
+  .step-content { flex: 1; padding-top: 6px; }
+  .step-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: var(--white-dim); line-height: 1.65; }
+  .order-visual {
+    background: var(--black-3); border: 1px solid var(--border);
+    border-radius: 4px; padding: 36px; position: relative;
+    overflow: hidden;
+  }
+  .order-visual-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 24px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--border);
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-red { background: #FF5F57; }
+  .dot-yellow { background: #FFBD2E; }
+  .dot-green { background: #28C840; }
+  .order-mock-title { font-size: 11px; letter-spacing: 2px; color: var(--white-dim); text-transform: uppercase; margin-left: 8px; }
+  .mock-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .mock-row:last-child { border-bottom: none; }
+  .mock-label { color: var(--white-dim); }
+  .mock-value { color: var(--white); font-weight: 500; }
+  .mock-badge {
+    padding: 3px 10px; border-radius: 100px;
+    font-size: 10px; font-weight: 600; letter-spacing: 1px;
+  }
+  .badge-green { background: rgba(40,200,64,0.15); color: #28C840; }
+  .badge-blue { background: var(--ice-dim); color: var(--ice); }
+  .mock-total {
+    margin-top: 20px; padding: 16px;
+    background: var(--red-glow); border: 1px solid rgba(200,16,46,0.2);
+    border-radius: 2px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .mock-total-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--white-dim); }
+  .mock-total-val { font-family: 'Bebas Neue'; font-size: 28px; color: var(--red); }
+
+  /* ── EXPORT ──────────────────────────────────────── */
+  #export {
+    background: var(--black);
+    position: relative; overflow: hidden;
+  }
+  .export-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(168,212,230,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 10% 30%, rgba(200,16,46,0.08) 0%, transparent 50%);
+  }
+  .export-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .export-certs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .cert-chip {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px;
+    background: var(--ice-dim); border: 1px solid var(--ice-glow);
+    border-radius: 100px;
+    font-size: 12px; letter-spacing: 1px; color: var(--ice);
+  }
+  .export-world {
+    position: relative; text-align: center;
+  }
+  .world-ring {
+    width: 320px; height: 320px; border-radius: 50%;
+    border: 1px solid var(--ice-glow);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto; position: relative;
+    animation: rotate 20s linear infinite;
+  }
+  .world-ring::before {
+    content: ''; position: absolute;
+    width: 80%; height: 80%; border-radius: 50%;
+    border: 1px dashed rgba(168,212,230,0.15);
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .world-core {
+    width: 140px; height: 140px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,212,230,0.15), rgba(10,10,10,0.8));
+    border: 1px solid var(--ice-glow);
+    display: flex; align-items: center; justify-content: center;
+    animation: rotate 20s linear infinite reverse;
+    flex-direction: column;
+  }
+  .world-core span:first-child { font-size: 32px; }
+  .world-core span:last-child { font-family: 'Bebas Neue'; font-size: 13px; letter-spacing: 2px; color: var(--ice); margin-top: 4px; }
+  .orbit-dot {
+    position: absolute; width: 10px; height: 10px; border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red);
+  }
+
+  /* ── MARKET ──────────────────────────────────────── */
+  #market { background: var(--black-2); }
+  .market-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 48px; }
+  .market-card {
+    padding: 28px 20px; text-align: center;
+    background: var(--black-3); border: 1px solid var(--border);
+    border-radius: 4px; transition: all .3s;
+  }
+  .market-card:hover { border-color: var(--red); background: var(--black); transform: translateY(-4px); }
+  .market-icon { font-size: 32px; margin-bottom: 12px; }
+  .market-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .market-sub { font-size: 11px; color: var(--white-dim); letter-spacing: 0.5px; }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: var(--black); border-top: 1px solid var(--border);
+    padding: 60px 60px 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+  .footer-brand p { font-size: 13px; color: var(--white-dim); line-height: 1.75; margin-top: 16px; max-width: 280px; }
+  .footer-col h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { text-decoration: none; color: var(--white-dim); font-size: 13px; transition: color .2s; }
+  .footer-col a:hover { color: var(--white); }
+  .contact-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 13px; color: var(--white-dim); }
+  .contact-item strong { color: var(--red); min-width: 16px; }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; color: var(--white-muted); letter-spacing: 1px;
+  }
+  .footer-bottom a { color: var(--red); text-decoration: none; }
+  .social-links { display: flex; gap: 16px; }
+  .social-link {
+    width: 36px; height: 36px; border-radius: 4px;
+    background: var(--black-3); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; text-decoration: none; color: var(--white-dim);
+    transition: all .2s;
+  }
+  .social-link:hover { border-color: var(--red); color: var(--red); }
+
+  /* ── DIVIDER ─────────────────────────────────────── */
+  .ticker {
+    background: var(--red); padding: 14px 0;
+    overflow: hidden; white-space: nowrap;
+  }
+  .ticker-inner { display: inline-flex; gap: 0; animation: ticker 20s linear infinite; }
+  .ticker-item {
+    padding: 0 32px; font-family: 'Bebas Neue'; font-size: 14px;
+    letter-spacing: 4px; color: rgba(255,255,255,0.85);
+  }
+  .ticker-item::after { content: '✦'; margin-left: 32px; opacity: 0.5; }
+  @keyframes ticker { to { transform: translateX(-50%); } }
+
+  /* ── ANIMATIONS ──────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 1024px) {
+    nav { padding: 18px 32px; }
+    nav .nav-links { display: none; }
+    section { padding: 80px 32px; }
+    #hero { padding: 120px 32px 80px; }
+    .hero-stats { right: 32px; bottom: 32px; gap: 28px; }
+    .hero-scroll { left: 32px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid, .order-grid, .export-inner { grid-template-columns: 1fr; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .market-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .hero-stats { display: none; }
+    .hero-ctas { flex-direction: column; }
+    .product-grid { grid-template-columns: 1fr 1fr; }
+    .why-features { grid-template-columns: 1fr; }
+    .market-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    footer { padding: 48px 24px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-mark">TJ</div>
+    <div class="logo-text">
+      <span>Toba Jaya</span>
+      <span>Supplier</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">Produk</a></li>
+    <li><a href="#why">Keunggulan</a></li>
+    <li><a href="#order">Pemesanan</a></li>
+    <li><a href="#export">Export</a></li>
+  </ul>
+  <a href="https://wa.me/6208xxxxxxxxxx" class="nav-cta">Order via WhatsApp</a>
+</nav>
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-noise"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">🧊 Cold Chain Certified Distributor</div>
+    <h1 class="hero-h1">Trusted Meat &amp;<br><em>Seafood Supplier</em><br>for Your Business</h1>
+    <p class="hero-sub">Fresh &nbsp;·&nbsp; <span>Frozen</span> &nbsp;·&nbsp; Reliable &nbsp;·&nbsp; <span>Export Ready</span></p>
+    <p class="hero-desc">Distribusi daging segar, daging olahan, dan seafood premium untuk hotel, restoran, katering, dan kebutuhan ekspor. Sistem cold chain terjaga dari sumber hingga tangan Anda.</p>
+    <div class="hero-ctas">
+      <a href="mailto:info@tobajayasupplier.com" class="btn-primary">📋 Request Price List</a>
+      <a href="https://wa.me/6208xxxxxxxxxx" class="btn-outline">💬 Order via WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">100<span style="font-size:24px">+</span></span>
+      <span class="stat-label">Mitra Bisnis</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Kategori Produk</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">24<span style="font-size:24px">H</span></span>
+      <span class="stat-label">Pengiriman</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll to Explore
+  </div>
+</section>
+
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">DAGING SAPI PREMIUM</span>
+    <span class="ticker-item">AYAM & BEBEK SEGAR</span>
+    <span class="ticker-item">SEAFOOD BERKUALITAS</span>
+    <span class="ticker-item">FROZEN FOOD & OLAHAN</span>
+    <span class="ticker-item">COLD CHAIN SYSTEM</span>
+    <span class="ticker-item">EXPORT READY</span>
+    <span class="ticker-item">B2B SUPPLIER</span>
+    <span class="ticker-item">DAGING SAPI PREMIUM</span>
+    <span class="ticker-item">AYAM & BEBEK SEGAR</span>
+    <span class="ticker-item">SEAFOOD BERKUALITAS</span>
+    <span class="ticker-item">FROZEN FOOD & OLAHAN</span>
+    <span class="ticker-item">COLD CHAIN SYSTEM</span>
+    <span class="ticker-item">EXPORT READY</span>
+    <span class="ticker-item">B2B SUPPLIER</span>
+  </div>
+</div>
+
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header reveal">
+    <div>
+      <div class="section-label">Katalog Produk</div>
+      <h2 class="section-title">Produk Unggulan<br>Kami</h2>
+    </div>
+    <p class="section-desc">Tersedia dalam kondisi segar dan beku, semua produk kami melalui proses seleksi ketat untuk memastikan kualitas dan higienitas terbaik.</p>
+  </div>
+
+  <div class="product-grid reveal">
+
+    <div class="product-card">
+      <div class="product-card-bg" style="background:linear-gradient(160deg,#1a0808 0%,#0d0505 100%)"></div>
+      <div class="product-card-overlay"></div>
+      <div class="product-accent"></div>
+      <div class="product-icon">🥩</div>
+      <div class="product-content">
+        <span class="product-tag">Sapi</span>
+        <div class="product-name">DAGING SAPI</div>
+        <ul class="product-items">
+          <li>Daging sapi segar</li>
+          <li>Daging sapi beku</li>
+          <li>Tenderloin, Sirloin</li>
+          <li>Ribeye premium</li>
+        </ul>
+        <div class="product-count">06 <span>Varian</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-card-bg" style="background:linear-gradient(160deg,#0d0e08 0%,#0a0b06 100%)"></div>
+      <div class="product-card-overlay"></div>
+      <div class="product-accent"></div>
+      <div class="product-icon">🍗</div>
+      <div class="product-content">
+        <span class="product-tag">Unggas</span>
+        <div class="product-name">AYAM & BEBEK</div>
+        <ul class="product-items">
+          <li>Ayam potong segar</li>
+          <li>Ayam & bebek frozen</li>
+          <li>Produk marinasi</li>
+          <li>Olahan unggas</li>
+        </ul>
+        <div class="product-count">08 <span>Varian</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-card-bg" style="background:linear-gradient(160deg,#08101a 0%,#050d12 100%)"></div>
+      <div class="product-card-overlay"></div>
+      <div class="product-accent"></div>
+      <div class="product-icon">🐟</div>
+      <div class="product-content">
+        <span class="product-tag">Seafood</span>
+        <div class="product-name">SEAFOOD</div>
+        <ul class="product-items">
+          <li>Ikan laut & air tawar</li>
+          <li>Udang, cumi, kepiting</li>
+          <li>Seafood beku</li>
+          <li>Siap distribusi</li>
+        </ul>
+        <div class="product-count">06 <span>Varian</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-card-bg" style="background:linear-gradient(160deg,#0a0a14 0%,#07070d 100%)"></div>
+      <div class="product-card-overlay"></div>
+      <div class="product-accent"></div>
+      <div class="product-icon">🧊</div>
+      <div class="product-content">
+        <span class="product-tag">Olahan</span>
+        <div class="product-name">FROZEN & OLAHAN</div>
+        <ul class="product-items">
+          <li>Sosis, nugget, bakso</li>
+          <li>Siap masak</li>
+          <li>Custom B2B order</li>
+          <li>Private label</li>
+        </ul>
+        <div class="product-count">06 <span>Varian</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-grid">
+    <div class="reveal">
+      <div class="section-label">Keunggulan</div>
+      <h2 class="section-title">Mengapa Memilih<br>Toba Jaya?</h2>
+      <p class="section-desc" style="margin-bottom:48px">Kami bukan sekadar supplier — kami adalah mitra bisnis jangka panjang yang berkomitmen pada standar tertinggi.</p>
+
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="feature-icon-wrap">✅</div>
+          <div class="feature-title">Kualitas Terjamin</div>
+          <div class="feature-desc">Seleksi ketat setiap produk. Standar higienitas tinggi dari sumber hingga pengiriman.</div>
+        </div>
+        <div class="why-feature">
+          <div class="feature-icon-wrap">🚛</div>
+          <div class="feature-title">Tepat Waktu</div>
+          <div class="feature-desc">Sistem distribusi terorganisir. Pengiriman terjadwal sesuai kebutuhan bisnis Anda.</div>
+        </div>
+        <div class="why-feature">
+          <div class="feature-icon-wrap">💰</div>
+          <div class="feature-title">Harga Kompetitif</div>
+          <div class="feature-desc">Harga spesial untuk B2B dan volume besar. Sistem kontrak jangka panjang tersedia.</div>
+        </div>
+        <div class="why-feature">
+          <div class="feature-icon-wrap">⚙️</div>
+          <div class="feature-title">Custom Order</div>
+          <div class="feature-desc">Custom cutting, private label, dan subscription supply untuk kebutuhan spesifik bisnis Anda.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-visual reveal">
+      <div class="why-visual-accent"></div>
+      <div class="why-visual-accent2"></div>
+      <h3>Sistem Cold Chain<br>Terjaga Penuh</h3>
+      <p>Kami menerapkan rantai distribusi dingin end-to-end untuk memastikan kesegaran dan keamanan pangan produk yang Anda terima.</p>
+      <div class="cold-badges">
+        <div class="cold-badge">
+          <span class="cold-badge-icon">🧊</span>
+          <div class="cold-badge-text">
+            <span>Cold Storage Facility</span>
+            <span>Suhu -18°C s/d -25°C untuk produk beku</span>
+          </div>
+        </div>
+        <div class="cold-badge">
+          <span class="cold-badge-icon">🚛</span>
+          <div class="cold-badge-text">
+            <span>Armada Berpendingin</span>
+            <span>Distribusi dengan armada refrigerated truck</span>
+          </div>
+        </div>
+        <div class="cold-badge">
+          <span class="cold-badge-icon">📦</span>
+          <div class="cold-badge-text">
+            <span>Pengemasan Vakum</span>
+            <span>Vacuum & modified atmosphere packaging</span>
+          </div>
+        </div>
+        <div class="cold-badge">
+          <span class="cold-badge-icon">🔍</span>
+          <div class="cold-badge-text">
+            <span>Quality Control Ketat</span>
+            <span>Inspeksi di setiap tahap rantai distribusi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TICKER 2 -->
+<div class="ticker" style="background: var(--black-3); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="ticker-inner" style="animation-direction:reverse; animation-duration:25s;">
+    <span class="ticker-item" style="color:var(--white-dim)">HOTEL & RESORT</span>
+    <span class="ticker-item" style="color:var(--white-dim)">RESTORAN & CAFE</span>
+    <span class="ticker-item" style="color:var(--white-dim)">CATERING</span>
+    <span class="ticker-item" style="color:var(--white-dim)">CLOUD KITCHEN</span>
+    <span class="ticker-item" style="color:var(--white-dim)">DISTRIBUTOR</span>
+    <span class="ticker-item" style="color:var(--white-dim)">EXPORT MARKET</span>
+    <span class="ticker-item" style="color:var(--white-dim)">HOTEL & RESORT</span>
+    <span class="ticker-item" style="color:var(--white-dim)">RESTORAN & CAFE</span>
+    <span class="ticker-item" style="color:var(--white-dim)">CATERING</span>
+    <span class="ticker-item" style="color:var(--white-dim)">CLOUD KITCHEN</span>
+    <span class="ticker-item" style="color:var(--white-dim)">DISTRIBUTOR</span>
+    <span class="ticker-item" style="color:var(--white-dim)">EXPORT MARKET</span>
+  </div>
+</div>
+
+
+<!-- ORDER SYSTEM -->
+<section id="order">
+  <div class="order-grid">
+    <div class="reveal">
+      <div class="section-label">Cara Order</div>
+      <h2 class="section-title">Sistem Pemesanan<br>yang Mudah</h2>
+      <p class="section-desc" style="margin-bottom: 0">Proses order yang sederhana dan profesional, dirancang untuk efisiensi bisnis Anda.</p>
+
+      <div class="order-steps" style="margin-top:40px">
+        <div class="order-step">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <div class="step-title">Hubungi via WhatsApp atau Email</div>
+            <div class="step-desc">Sampaikan kebutuhan produk, volume, dan jadwal pengiriman yang diinginkan. Tim kami siap merespons dengan cepat.</div>
+          </div>
+        </div>
+        <div class="order-step">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <div class="step-title">Terima Price List & Konfirmasi Order</div>
+            <div class="step-desc">Kami kirimkan price list terbaru. Setelah Anda konfirmasi, order langsung kami proses.</div>
+          </div>
+        </div>
+        <div class="order-step">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <div class="step-title">Pengiriman Terjadwal</div>
+            <div class="step-desc">Armada cold chain kami siap mendistribusikan pesanan Anda tepat waktu dan dalam kondisi terbaik.</div>
+          </div>
+        </div>
+        <div class="order-step">
+          <span class="step-num">04</span>
+          <div class="step-content">
+            <div class="step-title">Recurring Order (Subscription)</div>
+            <div class="step-desc">Atur jadwal pengiriman rutin mingguan atau bulanan untuk memastikan stok Anda tidak pernah kosong.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-visual reveal">
+      <div class="order-visual-header">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span class="order-mock-title">Order Summary — #TJS-2024-0842</span>
+      </div>
+      <div class="mock-row">
+        <span class="mock-label">Status</span>
+        <span class="mock-badge badge-green">✓ Confirmed</span>
+      </div>
+      <div class="mock-row">
+        <span class="mock-label">Daging Sapi Segar</span>
+        <span class="mock-value">50 kg</span>
+      </div>
+      <div class="mock-row">
+        <span class="mock-label">Ayam Potong Beku</span>
+        <span class="mock-value">80 kg</span>
+      </div>
+      <div class="mock-row">
+        <span class="mock-label">Udang Vaname</span>
+        <span class="mock-value">25 kg</span>
+      </div>
+      <div class="mock-row">
+        <span class="mock-label">Pengiriman</span>
+        <span class="mock-badge badge-blue">🚛 Scheduled</span>
+      </div>
+      <div class="mock-row">
+        <span class="mock-label">Tanggal Kirim</span>
+        <span class="mock-value">Besok, 07:00 WIB</span>
+      </div>
+      <div class="mock-total">
+        <span class="mock-total-label">Total Order</span>
+        <span class="mock-total-val">155 KG</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPORT -->
+<section id="export">
+  <div class="export-bg"></div>
+  <div class="export-inner">
+    <div class="reveal">
+      <div class="section-label">Global Reach</div>
+      <h2 class="section-title">Siap untuk<br>Distribusi<br>Internasional</h2>
+      <p class="section-desc">Kami mempersiapkan diri untuk melayani kebutuhan ekspor dengan standar internasional. Produk kami siap bersaing di pasar global.</p>
+
+      <div class="export-certs">
+        <div class="cert-chip">🌐 Export Ready</div>
+        <div class="cert-chip">❄️ HACCP Compliant</div>
+        <div class="cert-chip">🔒 Halal Certified</div>
+        <div class="cert-chip">✅ SNI Standard</div>
+        <div class="cert-chip">📋 ISO Ready</div>
+      </div>
+
+      <div style="margin-top:40px; display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="mailto:info@tobajayasupplier.com" class="btn-primary">📩 Hubungi Tim Export</a>
+        <a href="https://wa.me/6208xxxxxxxxxx" class="btn-outline">💬 Diskusi via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="export-world reveal">
+      <div class="world-ring">
+        <div class="orbit-dot" style="top:10px;right:60px;"></div>
+        <div class="orbit-dot" style="bottom:40px;right:20px;width:7px;height:7px;background:var(--ice);box-shadow:0 0 10px var(--ice);"></div>
+        <div class="orbit-dot" style="top:40%;left:-5px;width:6px;height:6px;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
+        <div class="world-core">
+          <span>🌏</span>
+          <span>EXPORT</span>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--white-dim);margin-top:24px;letter-spacing:1px;text-transform:uppercase;">Ready for International Market</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- TARGET MARKET -->
+<section id="market">
+  <div class="reveal" style="text-align:center;margin-bottom:0;">
+    <div class="section-label" style="justify-content:center">Target Market</div>
+    <h2 class="section-title" style="text-align:center">Siapa yang Kami<br>Layani?</h2>
+  </div>
+  <div class="market-grid reveal">
+    <div class="market-card">
+      <div class="market-icon">🏨</div>
+      <div class="market-name">Hotel & Resort</div>
+      <div class="market-sub">Bintang 3, 4 & 5</div>
+    </div>
+    <div class="market-card">
+      <div class="market-icon">🍽️</div>
+      <div class="market-name">Restoran & Cafe</div>
+      <div class="market-sub">Fine dining hingga casual</div>
+    </div>
+    <div class="market-card">
+      <div class="market-icon">🥡</div>
+      <div class="market-name">Catering & Cloud Kitchen</div>
+      <div class="market-sub">Volume besar, kualitas stabil</div>
+    </div>
+    <div class="market-card">
+      <div class="market-icon">🏪</div>
+      <div class="market-name">Distributor & Retail</div>
+      <div class="market-sub">Harga kompetitif reseller</div>
+    </div>
+    <div class="market-card">
+      <div class="market-icon">✈️</div>
+      <div class="market-name">Export Market</div>
+      <div class="market-sub">Pasar internasional</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="logo-mark">TJ</div>
+        <div class="logo-text">
+          <span>Toba Jaya</span>
+          <span>Supplier</span>
+        </div>
+      </div>
+      <p>Distribusi dan penyediaan produk daging segar, daging olahan, dan seafood berkualitas tinggi. Mitra terpercaya untuk bisnis hospitality dan food service Anda.</p>
+      <div class="social-links" style="margin-top:20px">
+        <a class="social-link" href="#">ig</a>
+        <a class="social-link" href="#">fb</a>
+        <a class="social-link" href="#">in</a>
+        <a class="social-link" href="#">wa</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Produk</h4>
+      <ul>
+        <li><a href="#">Daging Sapi</a></li>
+        <li><a href="#">Ayam & Bebek</a></li>
+        <li><a href="#">Seafood</a></li>
+        <li><a href="#">Frozen & Olahan</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Layanan</h4>
+      <ul>
+        <li><a href="#">Custom Cutting</a></li>
+        <li><a href="#">Private Label</a></li>
+        <li><a href="#">Subscription Supply</a></li>
+        <li><a href="#">Export Services</a></li>
+        <li><a href="#">Konsultasi B2B</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <div class="contact-item">
+        <strong>📱</strong>
+        <span>08xx-xxxx-xxxx<br>(WhatsApp Available)</span>
+      </div>
+      <div class="contact-item">
+        <strong>✉️</strong>
+        <span>info@tobajayasupplier.com</span>
+      </div>
+      <div class="contact-item">
+        <strong>📍</strong>
+        <span>Indonesia</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2024 CV Toba Jaya Supplier. All rights reserved.</span>
+    <span>Designed for <a href="#">tobajayasupplier.com</a></span>
+  </div>
+</footer>
+
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav shrink on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.padding = '14px 60px';
+    } else {
+      nav.style.padding = '22px 60px';
+    }
+  });
+</script>
+</body>
+</html>
